@@ -1,0 +1,386 @@
+/* ================= GLOBAL ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('ft/fondo.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ================= HEADER ================= */
+h1 {
+  text-align: center;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  padding: 15px;
+  margin: 0;
+}
+
+/* ================= MENÚ ================= */
+#menu-toggle {
+  display: none;
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-icon {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 10001;
+}
+
+.menu-icon label {
+  width: 40px;
+  height: 40px;
+  background: #b3b3b3;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  width: 22px;
+  height: 2px;
+  background: black;
+  transition: 0.3s;
+}
+
+/* ICONO X */
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MENÚ LATERAL (MÓVIL) */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -290px;
+  width: 220px;
+  height: 100vh;
+  background: #222;
+  padding: 70px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  transition: 0.3s ease;
+  z-index: 10000;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* MENÚ ABIERTO */
+#menu-toggle:checked ~ .menu {
+  left: 0;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+#menu-toggle:checked ~ .overlay {
+  display: block;
+}
+
+/* ================= PC ================= */
+@media (min-width: 1024px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .menu {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    gap: 20px;
+  }
+
+  .overlay {
+    display: none !important;
+  }
+}
+
+/* ================= INFO ================= */
+.servicios-info {
+  background: #ffffffdc;
+  margin: 25px;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* ================= SERVICIOS ================= */
+.nuestro-servicio {
+  background: rgba(255,255,255,0.3);
+  backdrop-filter: blur(5px);
+  margin: 25px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.sub {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+/* GRID */
+.servicios-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 20px;
+}
+
+@media (min-width: 784px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.servicios-grid li {
+  background: aliceblue;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.servicios-grid img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.servicios-grid span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* CHECKBOX */
+.servicios-grid input {
+  display: none;
+}
+
+.servicios-grid label {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 2px solid gray;
+  cursor: pointer;
+  background: #bbb;
+}
+
+/* SERVICIO ACTIVO */
+.servicios-grid li:has(input:checked) {
+  background: #2e7d32;
+  color: white;
+}
+
+.servicios-grid li:has(input:checked) label {
+  background: #1b5e20;
+  color: white;
+  border-color: #1b5e20;
+}
+
+/* ================= BOTÓN ================= */
+.soli {
+  background: #00ff1e;
+  width: 90%;
+  max-width: 420px;
+  margin: 25px auto;
+  padding: 15px;
+  font-size: 22px;
+  border-radius: 12px;
+  border: none;
+  display: block;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.soli:hover {
+  background: #00cc18;
+}
+
+/* ================= CONTACTO ================= */
+.nada {
+  background: #2e2e2e;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.titulo-contacto {
+  width: 100%;
+  font-size: 26px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.cont-ft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+}
+
+.cont-ft img {
+  width: 80px;
+  height: 80px;
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.cont-ft span {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ================= WHATSAPP ================= */
+.btn-wsp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+.btn-wsp img {
+  width: 55px;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal-contenido {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+}
+
+
+/* ===== MENÚ ACTIVO ===== */
+.menu a {
+  position: relative;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.menu a.active {
+  background: #4caf50;
+  color: white;
+  animation: pulse 0.8s ease;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(76,175,80,0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(76,175,80,0); }
+  100% { box-shadow: 0 0 0 0 rgba(76,175,80,0); }
+}
+
+/* ===== SECCIÓN DESTACADA ===== */
+.section-focus {
+  animation: flash 1.2s ease;
+}
+
+@keyframes flash {
+  0% { background-color: rgba(255,255,0,0.4); }
+  100% { background-color: transparent; }
+}
+
+.final{
+  background-color: black;
+  color: rgb(255, 255, 255);
+}
+
+/* Quitar márgenes por defecto */
+.final,
+.nada {
+  margin: 0;
+}
+
+/* Quitar margen del texto */
+.final p {
+  margin: 0;
+}
+
+/* Sección final */
+.final {
+  background-color: black;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Sección contacto */
+.nada {
+  background: #2e2e2e;
+  padding: 40px 20px;
+}
+
+.btn-wsp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Oculto */
+.btn-wsp.oculto {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}

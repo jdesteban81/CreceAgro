@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="inicio">
+    <h1>CreceAgro</h1>
+  </div>
+
+  <!--Menu-->
+<input type="checkbox" id="menu-toggle">
+
+<div class="menu-icon">
+  <label for="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+</div>
+
+<nav class="menu">
+  <a href="#inicio">Inicio</a>
+  <a href="#servicios">Servicios</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<!-- capa para cerrar tocando fuera -->
+<div class="overlay"></div>
+
+
+
+
+<!-- Inicio -->
+<section  class="servicios-info">
+  <h3>Servicios Agrícolas Profesionales</h3>
+  <p>Ofrecemos servicios agrícolas integrales enfocados en mejorar la productividad
+    y el cuidado de sus cultivos.</p>
+  <p>Nos especializamos en la preparación de suelos, siembra, mantenimiento
+    de cultivos y cosecha.</p>
+</section>
+
+
+<!-- SERVICIOS -->
+<section id="servicios" class="nuestro-servicio">
+
+  <p class="sub">Nuestros servicios incluyen</p>
+
+  <ul class="servicios-grid">
+
+    <li class="servicio-item">
+  <img src="ft/ft-ser1.png" alt="Siembra">
+  <span>Siembra y manejo de cultivos</span><br>
+  <label>
+    <input type="checkbox" class="servicio" value="Siembra y manejo de cultivos">
+    Solicitar Servicio
+  </label>
+</li>
+
+<li class="servicio-item">
+  <img src="ft/ft-ser2.png" alt="Fertilizantes">
+  <span>Aplicación de fertilizantes y control fitosanitario</span><br>
+  <label>
+    <input type="checkbox" class="servicio" value="Aplicación de fertilizantes y control fitosanitario">
+    Solicitar Servicio
+  </label>
+</li>
+
+<li class="servicio-item">
+  <img src="ft/ft-ser3.png" alt="Riego">
+  <span>Riego y mantenimiento agrícola</span><br>
+  <label>
+    <input type="checkbox" class="servicio" value="Riego y mantenimiento agrícola">
+    Solicitar Servicio
+  </label>
+</li>
+
+<li class="servicio-item">
+  <img src="ft/ft-ser4.png" alt="Cosecha">
+  <span>Cosecha y apoyo en labores agrícolas</span><br>
+  <label>
+    <input type="checkbox" class="servicio" value="Cosecha y apoyo en labores agrícolas">
+    Solicitar Servicio
+  </label>
+</li>
+
+<li class="servicio-item">
+  <img src="ft/ft-dron.png.jpg" alt="Drones">
+  <span>Fumigación y fertilización con drones</span><br>
+  <label>
+    <input type="checkbox" class="servicio" value="Fumigación y fertilización con drones">
+    Solicitar Servicio
+  </label>
+</li>
+
+
+  </ul>
+
+  <!-- BOTÓN -->
+  <button class="soli" onclick="enviarWhatsApp()">
+    Confirmar Pedido
+  </button>
+
+  
+</section>
+
+<!-- Contactos -->
+<div  class="final">
+  <p class="final-text">
+    Trabajamos con dedicación y experiencia para ayudarle a obtener mejores resultados.
+  </p>
+</div>
+
+
+
+<div id="contacto" class="nada">
+
+  <p class="titulo-contacto">Contáctanos</p>
+
+  <a href="#" class="cont-ft">
+    <img src="ft/Gmail-ft.png" alt="Gmail">
+    <span>Gmail</span>
+  </a>
+
+  <a href="#" class="cont-ft">
+    <img src="ft/Facebook-ft.png" alt="Facebook">
+    <span>Facebook</span>
+  </a>
+
+  <a href="#" class="cont-ft">
+    <img src="ft/whatsApp.png" alt="WhatsApp">
+    <span>WhatsApp</span>
+  </a>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- BOTÓN FLOTANTE WHATSAPP -->
+<a href="https://wa.me/56973709203" class="btn-wsp">
+  <img src="ft/whatsapp.png" alt="WhatsApp">
+</a>
+
+<!-- MODAL ALERTA -->
+<div id="modal-alerta" class="modal">
+  <div class="modal-contenido">
+    <h2>⚠️ Atención</h2>
+    <p>Selecciona al menos un servicio antes de confirmar el pedido.</p>
+    <button onclick="cerrarModal()">Entendido</button>
+  </div>
+</div>
+
+<!-- SCRIPT -->
+<script src="javaScript.js"></script>
+
+</body>
+</html>
